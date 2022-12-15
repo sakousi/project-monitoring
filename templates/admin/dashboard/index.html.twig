@@ -1,0 +1,11 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Hello DashboardController!{% endblock %}
+
+{% block body %}
+    <ul>
+        {% for category in categories %}
+            <li><a href="{{ path('admin_category_show', {'id': category.id}) }}">{{ category.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}
+    Category {{ category.name }}
+{% endblock %}
+
+{% block body %}
+    <h1>Category {{ category.name }}</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+            {% for project in category.projects %}
+                <tr>
+                    <td>{{ project.id }}</td>
+                    <td>{{ project.name }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_dashboard') }}">back to dashboard</a>
+{% endblock %}
+

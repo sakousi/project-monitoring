@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %} | Project Monitoring</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+
+        <div class="d-flex flex-column min-vh-100">
+            {% block header %}{% endblock %}
+
+            {% block messages %}
+                <div class="container">
+                    {% for label, messages in app.flashes %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ label }} mt-2">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            {% endblock %}
+
+            <main class="flex-grow-1">
+                {% block body %}{% endblock %}
+            </main>
+
+            {% block footer %}
+                <footer>
+                    <div class="container">
+                        <hr>
+                        <p class="text-center">
+                            &copy; {{ 'now'|date('Y') }} - Project Monitoring -
+                            <a href="{{ path('admin_dashboard') }}">admin</a>
+                        </p>
+                    </div>
+                </footer>
+            {% endblock %}
+
+        </div>
+    </body>
+</html>
