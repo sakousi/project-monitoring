@@ -23,6 +23,7 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
         $website->setCostPerHour(50);
         $website->setDateStart($today->modify('-6 month'));
         $website->setDateEnd($today->modify('-2 month'));
+		$website->setPaidAmount(1600);
         $manager->persist($website);
 
         $websiteMaintenance = new Project();
@@ -34,6 +35,7 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
         $websiteMaintenance->setHours(20);
         $websiteMaintenance->setCostPerHour(40);
         $websiteMaintenance->setDateStart($today->modify('-2 month'));
+		$websiteMaintenance->setPaidAmount(600);
         $manager->persist($websiteMaintenance);
 
         $webapp = new Project();
@@ -45,6 +47,7 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
         $webapp->setHours(150);
         $webapp->setCostPerHour(60);
         $webapp->setDateStart($today->modify('-3 month'));
+		$webapp->setPaidAmount(800);
         $manager->persist($webapp);
 
         $manager->flush();

@@ -19,6 +19,7 @@
                 <th>Date End</th>
                 <th>Hours</th>
                 <th>Cost Per Hour</th>
+                <th>Paid Amount</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -30,6 +31,7 @@
                     <td>{{ project.dateEnd ? project.dateEnd|date('Y-m-d') : '' }}</td>
                     <td>{{ project.hours }}</td>
                     <td>{{ project.costPerHour }}</td>
+                    <td>{{ project.paidAmount }}</td>
                     <td>
                         <a href="{{ path('admin_project_show', {'id': project.id}) }}" class="btn btn-secondary">
                             <i class="far fa-eye"></i>

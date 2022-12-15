@@ -40,9 +40,17 @@
                                 <i class="fas fa-money-bills"></i>
                                 <strong>Total cost</strong> : {{ project.price }} €
                             </li>
+                            <li>
+                                <i class="fas fa-money-bills"></i>
+                                <strong>Paid Amount</strong> : {{ project.paidAmount }} €
+                            </li>
+                            <li>
+                                <i class="fas fa-money-bills"></i>
+                                <strong>To paid</strong> : {{ project.price - project.paidAmount }} €
+                            </li>
                         </ul>
                         <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 15%"></div>
+                            <div class="progress-bar" role="progressbar" style="width: {{ 100 * (project.paidAmount / project.price) }}%"></div>
                         </div>
                     </div>
                 </article>

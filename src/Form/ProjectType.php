@@ -25,6 +25,7 @@ class ProjectType extends AbstractType
             ])
             ->add('hours')
             ->add('costPerHour')
+			->add('paidAmount')
             ->add('customer', EntityType::class, [
                 'class' => Customer::class,
                 'choice_label' => 'name',
